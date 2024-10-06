@@ -5,8 +5,8 @@ import { catchError, map, of, switchMap } from "rxjs";
 
 import * as PacActions from "./poc.actions";
 
-const hostlink = 'http://127.0.0.1:5000/';
-// const hostlink = 'http://4.174.172.228'; // Replace with your own REST API server hostname or ip address
+// const hostlink = 'http://127.0.0.1:5000/';
+const hostlink = 'http://4.174.172.228'; // Replace with your own REST API server hostname or ip address
 
 @Injectable()
 export class pocEffects {
