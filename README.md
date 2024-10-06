@@ -19,6 +19,9 @@ Redux (ngrx store) is used by the Angular client to call REST API server.  Pleas
 - @ngrx/store
 - @ngrx/effects
 - rxjs
+  
+Also ensure to replace with your own REST API server URL in the effect.
+
 
 # Accessing the Angular Application
 The Angular application can be accessed via the following URL:
