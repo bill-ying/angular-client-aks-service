@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 import { PocState } from './store/poc.reducer';
-import { getServerStatus } from './store/poc.actions'
+import * as PocActions from './store/poc.actions'
 
 
 @Component({
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(getServerStatus());
+    this.store.dispatch(PocActions.getServerStatus());
   }
 }
 

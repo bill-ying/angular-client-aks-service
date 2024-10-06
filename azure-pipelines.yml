@@ -1,17 +1,17 @@
 trigger:
 - main
 
-variables:
+variables:  # Replace following parameters with your own values
   # Azure Resource Group
-  azureResourceGroup: rg-rsrincloud-ss
+  azureResourceGroup: BillTestResourceGroup
   # Azure Container Registry
   azureContainerRegistry: BillTestContainerRegistry
   # AKS Cluster Name
   aksClusterName: BillTestCluster
   # Docker Image Name
   dockerImageName: angular-client
-  # Service Connection
-  serviceConnetion: BillTestServiceConnection-BillAngularClient
+  # Subscription
+  subscription: BillTestServiceConnection-BillAngularClient
   # Namespace
   namespace: bill-test
 
@@ -26,7 +26,7 @@ stages:
     steps:
     - task: AzureCLI@2
       inputs:
-        azureSubscription: $(serviceConnetion)
+        azureSubscription: $(subscription)
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
@@ -44,7 +44,7 @@ stages:
     steps:
     - task: AzureCLI@2
       inputs:
-        azureSubscription: $(serviceConnetion)
+        azureSubscription: $(subscription)
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
