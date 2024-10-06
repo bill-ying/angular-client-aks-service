@@ -1,0 +1,14 @@
+# service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-client-service
+  namespace: bill-test
+spec:
+  selector:
+    app: angular-client
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer

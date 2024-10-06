@@ -1,0 +1,24 @@
+# deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-client
+  namespace: bill-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-client
+  template:
+    metadata:
+      labels:
+        app: angular-client
+    spec:
+      containers:
+      - name: angular-client-container
+        image: BillTestContainerRegistry.azurecr.io/angular-client:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      
