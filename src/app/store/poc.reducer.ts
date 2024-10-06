@@ -13,10 +13,8 @@ export const initialState: PocState = {
 
 export const pocReducer = createReducer(
     initialState,
-    on(PocActions.getServerStatusSuccess, (state, { status }) => { 
-        return Object.assign({}, state, status)
-    }),
-    on(PocActions. getServerStatusFailure, (state, { error }) => { 
-        return { ...state, error };
+    on(PocActions.getServerStatusSuccess, (state, { status }) => ({ ...state, ...status })),
+    on(PocActions.getServerStatusFailure, (state, { error }) => { 
+        return { ...state, ...error };
     })
 )

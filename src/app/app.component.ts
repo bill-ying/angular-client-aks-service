@@ -21,7 +21,7 @@ import * as PocActions from './store/poc.actions'
 export class AppComponent implements OnInit {
    status$: Observable<string>;
 
-  constructor(private store: Store<{ poc: fromPoc.PocState}>) {
+  constructor(private store: Store<{ poc: fromPoc.PocState }>) {
     this.status$ = store.pipe(select(state => state.poc.message))   
   }
 

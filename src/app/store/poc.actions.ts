@@ -6,7 +6,7 @@ export const getServerStatus = createAction(
 
 export const getServerStatusSuccess = createAction(
     '[POC] Get Server Status Success', 
-    props<{status: any}>()
+    props<{status: { message: string }}>()
 );
 
 export const getServerStatusFailure = createAction(
