@@ -4,7 +4,7 @@ import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
-import { PocState } from './store/poc.reducer';
+import * as fromPoc from './store/poc.reducer';
 import * as PocActions from './store/poc.actions'
 
 
@@ -21,7 +21,7 @@ import * as PocActions from './store/poc.actions'
 export class AppComponent implements OnInit {
    status$: Observable<string>;
 
-  constructor(private store: Store<{ poc: PocState}>) {
+  constructor(private store: Store<{ poc: fromPoc.PocState}>) {
     this.status$ = store.pipe(select(state => state.poc.message))   
   }
 
