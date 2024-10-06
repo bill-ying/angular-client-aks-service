@@ -19,10 +19,10 @@ import * as PocActions from './store/poc.actions'
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-   status$: Observable<string>;
+   status$: Observable<fromPoc.PocState>;
 
   constructor(private store: Store<{ poc: fromPoc.PocState }>) {
-    this.status$ = store.pipe(select(state => state.poc.message))   
+    this.status$ = store.pipe(select(state => state.poc))   
   }
 
   ngOnInit(): void {
