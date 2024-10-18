@@ -8,7 +8,7 @@ This is a proof of concept (POC) project demonstrating how to use Azure DevOps t
 - Azure DevOps account with project, pipeline, and service connection setup properly.
 
 # Deployment Overview
-Once the code is built and deployed, the following resources will be available in Azure portal:
+Once the code is built and deployed by the provided pipelines using Azure DevOps, the following resources will be available in Azure portal:
 
 - A Docker image named angular-client in ACR.
 - A workload named angular-client with the corresponding pod deployed in  AKS cluster.
